@@ -119,9 +119,11 @@ def assert_valid_options
     skip_test_unit: false,
     edge: false
   }
+  puts('options1212', options)
   valid_options.each do |key, expected|
     next unless options.key?(key)
     actual = options[key]
+    
     unless actual == expected
       fail Rails::Generators::Error, "Unsupported option: #{key}=#{actual}"
     end
